@@ -7,7 +7,7 @@ html, body {
 }
 
 h1, h2, h3 {
-    color: white;
+    color: black;
     margin: 0;
     padding: 1rem 2rem;
 }
@@ -15,7 +15,7 @@ h1, h2, h3 {
 .background {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     z-index: 100;
     border-right: 0.3rem solid black;
@@ -29,10 +29,10 @@ h1, h2, h3 {
 }
 
 #name h1 {
-    background-image: linear-gradient(45deg, #f77f00, #d62828);
     z-index: 100;
     font-size: 10rem;
     padding: 0 4rem;
+    background-image: linear-gradient(45deg, #f77f00, #d62828);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
