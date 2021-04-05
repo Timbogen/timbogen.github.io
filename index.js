@@ -68,8 +68,11 @@ class ASCIIArt {
         // Get the image data
         this.getImageData();
 
+        // Enable the mouse interaction
+        this.enableInteraction();
+
         // Start the painting interval
-        setInterval(this.paint, 10);
+        setInterval(this.updateView, 16);
     }
 
     /**
@@ -152,6 +155,26 @@ class ASCIIArt {
     }
 
     /**
+     * Enable the interaction with the mouse
+     */
+    enableInteraction = () => {
+        window.addEventListener("mousemove", evt => {
+            try {
+                // Calculate the position of the mouse in the field
+                const x = Math.floor(evt.clientX / this.charWidth);
+                const y = Math.floor(evt.clientY / this.charWidth);
+
+                // Set the field and some neighbors to some darker values
+                this.foreground[x][y] = 0;
+                this.foreground[x - 1][y] = 1;
+                this.foreground[x + 1][y] = 2;
+                this.foreground[x][y - 1] = 3;
+                this.foreground[x][y + 1] = 4;
+            } catch (e) {}
+        });
+    }
+
+    /**
      * Get the brightness value (index for the matching character) for a given rgb array
      *
      * @param color An number array with 4 values for rgba
@@ -163,14 +186,30 @@ class ASCIIArt {
     };
 
     /**
-     * The paint routine
+     * The update routine
      */
-    paint = () => {
+    updateView = () => {
+        // Update the foreground
+        this.updateForeground();
+
+        // Start the painting
         this.ctx.clearRect(0, 0, this.width, this.height);
-        this.ctx.fillStyle = "black";
+        this.ctx.fillStyle = "#333333";
         this.background.forEach((row, i) => {
             row.forEach((value, j) => {
-                this.ctx.fillText(this.characters[Math.floor(value)], i * this.charWidth, j * this.charWidth);
+                const actualValue = Math.floor(Math.min(value, this.foreground[i][j]));
+                this.ctx.fillText(this.characters[actualValue], i * this.charWidth, j * this.charWidth);
+            });
+        });
+    };
+
+    /**
+     * Update the foreground matrix
+     */
+    updateForeground = () => {
+        this.foreground.forEach((row, i) => {
+            row.forEach((value, j) => {
+                if (value < this.white) this.foreground[i][j] = value + 1;
             });
         });
     };
