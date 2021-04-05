@@ -30,7 +30,7 @@ h1, h2, h3 {
 
 #name h1 {
     z-index: 100;
-    font-size: 10rem;
+    font-size: 8rem;
     padding: 0 4rem;
     background-image: linear-gradient(45deg, #f77f00, #d62828);
     -webkit-background-clip: text;
@@ -60,7 +60,7 @@ h1, h2, h3 {
 #weichwarenprojekt {
     margin-top: 4rem;
     margin-left: 18rem;
-    margin-bottom: 4rem;
+    margin-bottom: 12rem;
     cursor: pointer;
     text-decoration: none;
 }
@@ -89,6 +89,7 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     gap: 1rem;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
 }
@@ -98,13 +99,13 @@ h1, h2, h3 {
         font-size: 75%;
     }
     #name h1 {
-        font-size: 8rem;
+        font-size: 7rem;
     }
 }
 
 @media only screen and (max-width: 550px) {
     html {
-        font-size: 55%;
+        font-size: 60%;
     }
     #name h1 {
         font-size: 6rem;
@@ -113,18 +114,6 @@ h1, h2, h3 {
 
 @media only screen and (max-width: 350px) {
     html {
-        font-size: 40%;
-    }
-}
-
-@media only screen and (min-height: 1000px) {
-    #name {
-        margin-top: 8rem;
-    }
-}
-
-@media only screen and (min-height: 1300px) {
-    #name {
-        margin-top: 12rem;
+        font-size: 50%;
     }
 }
