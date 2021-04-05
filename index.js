@@ -8,7 +8,18 @@ class ASCIIArt {
                   "l", "I", ";", ":", ",", "\"", "^", "`", "'", ".", " "];
 
     /**
-     * The amount of characters that make up the ASCII art
+     * The value for a white field
+     */
+    white = 69;
+
+    /**
+     * The image's original size
+     */
+    imageWidth = 300;
+    imageHeight = 870;
+
+    /**
+     * The amount of characters that make up one row of the ASCII art
      */
     charCount = 100;
 
@@ -25,13 +36,22 @@ class ASCIIArt {
     /**
      * The image data for drawing the ascii art
      */
-    imageData = [[]];
+    imageData = [];
+
+    /**
+     * The matrix responsible for drawing the background (for the ascii art)
+     */
+    background = [];
+
+    /**
+     * The matrix responsible for drawing the foreground (mostly for animation)
+     */
+    foreground = [];
 
     /**
      * The size fields
      */
     offsetX = 0;
-    offsetY = 0;
     width = 0;
     height = 0;
     size = 0;
@@ -46,7 +66,7 @@ class ASCIIArt {
         this.resizeCanvas();
 
         // Get the image data
-        this.updateImageData();
+        this.getImageData();
 
         // Start the painting interval
         setInterval(this.paint, 10);
@@ -62,16 +82,74 @@ class ASCIIArt {
         this.ctx.canvas.width = this.width;
         this.ctx.canvas.height = this.height;
 
-        // Calculate offset and size of the whole thing
-        this.offsetX = this.width > this.height ? (this.width - this.height) / 2 : 0;
-        this.offsetY = this.height > this.width ? (this.height - this.width) / 2 : 0;
+        // Calculate the size and the offset
         this.size = this.width > this.height ? this.height : this.width;
+        this.charWidth = this.size / this.charCount;
+        this.offsetX = Math.floor((this.width - this.size) / 2 / this.charWidth);
 
         // Set the right text size
-        this.charWidth = this.size / this.charCount;
         this.ctx.font = `${this.charWidth}px serif`;
         this.ctx.textBaseline = "hanging";
+
+        // Update the matrices
+        this.updateMatrices();
     };
+
+    /**
+     * Iterate over the image and analyze the brightness
+     */
+    getImageData = () => {
+        // Hide the canvas
+        this.canvas.style.display = "none";
+
+        // Analyze the image
+        const charHeight = this.imageHeight / this.imageWidth * this.charCount;
+        const image = document.getElementById("image");
+        this.ctx.fillStyle = "white";
+        this.ctx.fillRect(0, 0, this.width, this.height);
+        this.ctx.drawImage(image, 0, 0, this.imageWidth, this.imageHeight, 0, 0, this.charCount, charHeight);
+        this.imageData = []
+        for (let i = 0; i < this.charCount; i++) {
+            this.imageData.push([])
+            for (let j = 0; j < charHeight; j++) {
+                this.imageData[i].push(this.getBrightnessValue(this.ctx.getImageData(i, j, 1, 1).data));
+            }
+        }
+
+        // Erase the image and show the canvas
+        this.ctx.clearRect(0, 0, this.width, this.height);
+        this.canvas.style.display = "block";
+
+        // Update the matrices
+        this.updateMatrices();
+    };
+
+    /**
+     * Update the background and foreground matrices
+     */
+    updateMatrices = () => {
+        const m = this.width / this.charWidth;
+        const n = this.height / this.charWidth;
+
+        // Fill the matrices with default values
+        this.background = [];
+        this.foreground = [];
+        for (let i = 0; i < m; i++) {
+            this.background.push([])
+            this.foreground.push([])
+            for (let j = 0; j < n; j++) {
+                this.background[i].push(this.white)
+                this.foreground[i].push(this.white)
+            }
+        }
+
+        // Fill the background with the image data
+        this.imageData.forEach((row, i) => {
+            row.forEach((value, j) => {
+                this.background[i + this.offsetX][j] = this.imageData[i][j];
+            });
+        });
+    }
 
     /**
      * Get the brightness value (index for the matching character) for a given rgb array
@@ -85,39 +163,14 @@ class ASCIIArt {
     };
 
     /**
-     * Iterate over the image and analyze the brightness
-     */
-    updateImageData = () => {
-        // Hide the canvas
-        this.canvas.style.display = "none";
-
-        // Analyze the image
-        const image = document.getElementById("image");
-        this.ctx.fillStyle = "white";
-        this.ctx.fillRect(0, 0, this.width, this.height);
-        this.ctx.drawImage(image, 0, 0, this.charCount, this.charCount);
-        this.imageData = [[]]
-        for (let i = 0; i < this.charCount; i++) {
-            this.imageData.push([])
-            for (let j = 0; j < this.charCount; j++) {
-                this.imageData[i].push(this.getBrightnessValue(this.ctx.getImageData(i, j, 1, 1).data));
-            }
-        }
-
-        // Erase the image and show the canvas
-        this.ctx.clearRect(0, 0, this.width, this.height);
-        this.canvas.style.display = "block";
-    };
-
-    /**
      * The paint routine
      */
     paint = () => {
         this.ctx.clearRect(0, 0, this.width, this.height);
         this.ctx.fillStyle = "black";
-        this.imageData.forEach((row, i) => {
+        this.background.forEach((row, i) => {
             row.forEach((value, j) => {
-                this.ctx.fillText(this.characters[Math.floor(value)], this.offsetX + i * this.charWidth, this.offsetY + j * this.charWidth);
+                this.ctx.fillText(this.characters[Math.floor(value)], i * this.charWidth, j * this.charWidth);
             });
         });
     };
