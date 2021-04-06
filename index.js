@@ -72,7 +72,7 @@ class ASCIIArt {
         this.enableInteraction();
 
         // Start the painting interval
-        setInterval(this.updateView, 16);
+        this.updateView();
     }
 
     /**
@@ -201,6 +201,7 @@ class ASCIIArt {
                 this.ctx.fillText(this.characters[actualValue], i * this.charWidth, j * this.charWidth);
             });
         });
+        window.requestAnimationFrame(this.updateView);
     };
 
     /**
