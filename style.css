@@ -125,8 +125,17 @@ h1, h2, h3 {
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 420px) {
     html {
         font-size: 50%;
+    }
+    #name h1 {
+        font-size: 5rem;
+    }
+}
+
+@media only screen and (max-height: 350px) {
+    html {
+        font-size: 40%;
     }
 }
