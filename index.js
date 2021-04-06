@@ -44,7 +44,7 @@ class ASCIIArt {
     background = [];
 
     /**
-     * The matrix responsible for drawing the foreground (mostly for animation)
+     * The foreground pixels (used for animation)
      */
     foreground = [];
 
@@ -136,13 +136,10 @@ class ASCIIArt {
 
         // Fill the matrices with default values
         this.background = [];
-        this.foreground = [];
         for (let i = 0; i < m; i++) {
             this.background.push([])
-            this.foreground.push([])
             for (let j = 0; j < n; j++) {
                 this.background[i].push(this.white)
-                this.foreground[i].push(this.white)
             }
         }
 
@@ -165,13 +162,25 @@ class ASCIIArt {
                 const y = Math.floor(evt.clientY / this.charWidth);
 
                 // Set the field and some neighbors to some darker values
-                this.foreground[x][y] = 0;
-                this.foreground[x - 1][y] = 1;
-                this.foreground[x + 1][y] = 2;
-                this.foreground[x][y - 1] = 3;
-                this.foreground[x][y + 1] = 4;
-            } catch (e) {}
+                this.foreground.push(this.createField(0, x, y));
+                this.foreground.push(this.createField(1, x - 1, y));
+                this.foreground.push(this.createField(2, x + 1, y));
+                this.foreground.push(this.createField(3, x, y - 1));
+                this.foreground.push(this.createField(4, x, y + 1));
+            } catch (e) {
+            }
         });
+    }
+
+    /**
+     * Create a foreground field
+     *
+     * @param value The value of the field
+     * @param x The x position
+     * @param y The y position
+     */
+    createField = (value, x, y) => {
+        return {value, x, y};
     }
 
     /**
@@ -197,9 +206,12 @@ class ASCIIArt {
         this.ctx.fillStyle = "#333333";
         this.background.forEach((row, i) => {
             row.forEach((value, j) => {
-                const actualValue = Math.floor(Math.min(value, this.foreground[i][j]));
-                this.ctx.fillText(this.characters[actualValue], i * this.charWidth, j * this.charWidth);
+                this.ctx.fillText(this.characters[Math.floor(value)], i * this.charWidth, j * this.charWidth);
             });
+        });
+        this.foreground.forEach((value) => {
+            this.ctx.clearRect(value.x * this.charWidth, value.y * this.charWidth, this.charWidth, this.charWidth);
+            this.ctx.fillText(this.characters[value.value], value.x * this.charWidth, value.y * this.charWidth);
         });
         window.requestAnimationFrame(this.updateView);
     };
@@ -208,13 +220,29 @@ class ASCIIArt {
      * Update the foreground matrix
      */
     updateForeground = () => {
-        this.foreground.forEach((row, i) => {
-            row.forEach((value, j) => {
-                if (value < this.white) this.foreground[i][j] = value + 1;
-            });
+        this.foreground = this.foreground.filter((value) => {
+            value.value += 1;
+            return value.value < this.white;
         });
     };
 }
 
+/**
+ * Update the info card about the age
+ */
+updateAgeInfo = () => {
+    // Calculate the age
+    const ageDifMs = Date.now() - new Date(1999, 10, 18).getTime();
+    const age = Math.abs(new Date(ageDifMs).getUTCFullYear() - 1970);
+
+    // Update the info card
+    document.getElementById("age-display").innerText = `${age} Years Old`;
+}
+
 // Wait for the HTML to be initialized
-window.onload = () => new ASCIIArt();
+window.onload = () => {
+    updateAgeInfo();
+
+    // Start drawing the ascii art
+    new ASCIIArt();
+}
