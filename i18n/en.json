@@ -1,0 +1,118 @@
+{
+    "components": {
+        "header": {
+            "logoText": "Tim Niederer // Freelancing",
+            "service": "Service",
+            "experience": "Experience",
+            "resume": "Resume",
+            "contact": "Contact",
+            "menu": "Menu",
+            "homePageContent": "This is the home page content.",
+            "greeting": "Welcome!",
+            "appTitle": "My Application",
+            "appDescription": "A great application with Next.js and i18n",
+            "navigation": "Navigation"
+        },
+        "footer": {
+            "otherContacts": "Other Contacts",
+            "pages": "Pages",
+            "legalNotice": "Legal Notice",
+            "privacy": "Privacy Policy",
+            "home": "Home",
+            "contact": {
+                "title": "Contact",
+                "subject": "Subject",
+                "message": "Your message...",
+                "send": "Send"
+            }
+        },
+        "language": {
+            "selectLanguage": "Select a language",
+            "languageDetected": "Language detected",
+            "languageChanged": "Language changed",
+            "languageRestored": "Language preference restored"
+        }
+    },
+    "accessibility": {
+        "menuIcon": "Menu icon",
+        "emailIcon": "Email icon",
+        "phoneIcon": "Phone icon",
+        "linkedinIcon": "LinkedIn icon",
+        "githubIcon": "GitHub icon",
+        "linkIcon": "Link icon",
+        "germanFlag": "German flag",
+        "britishFlag": "British flag"
+    },
+    "pages": {
+        "metadata": {
+            "title": "Tim Niederer // Freelancing",
+            "description": "Software development focusing on web and mobile development.",
+            "openGraph": {
+                "title": "Tim Niederer // Freelancing",
+                "description": "Software development focusing on web and mobile development.",
+                "countryName": "Germany"
+            }
+        },
+        "home": {
+            "intro": "All about software",
+            "contactMe": "Contact me",
+            "whatIOffer": "What I offer",
+            "offerDescription": "The areas where I have gained the most experience so far are web and mobile development. I was usually also involved in the design. However, I also quickly and gladly familiarize myself with other technologies/platforms.",
+            "webFullstack": "Web / Fullstack",
+            "webDescription": "Development for desktop and mobile - preferably with React / NextJS & NestJS.",
+            "mobile": "Mobile",
+            "mobileDescription": "Cross-platform development for iOS & Android - preferably with Flutter",
+            "other": "Other",
+            "otherDescription": "C & ESP32, C# & Unity, Java Swing/FX, ...",
+            "but": "but...",
+            "butDescription": "Technology is secondary to me. I prefer to work on projects that I can/want to use myself. Through my own interest in the product, it is easiest for me to develop good solutions.",
+            "myPath": "My Path",
+            "timeline2015": "2015 - started developing small projects in Java, C# and Web (HTML/CSS/JS) privately and later continued with Swift and C++",
+            "timeline2018": "2018 - Training as an IT specialist for application development in a small software company as a full-stack developer",
+            "timeline2021": "2021 - Takeover as a full-stack developer. Mainly in Typescript with React, React-Native, NodeJS, ExpressJS, MSSQL and MySQL but also Swift and C++.",
+            "experience": {
+                "title": "My Experience",
+                "description": "In my 8 years of computer science, I have already had contact points with most major technologies. I spent most of my time in the frontend, but I also enjoy working on backend or hardware projects. In the last 5 years, I have primarily been working with the following technologies:",
+                "programmingLanguages": "Programming Languages",
+                "frameworksTechnologies": "Frameworks / Technologies",
+                "preferredTools": "Preferred Development Tools",
+                "languages": {
+                    "ts": "TypeScript",
+                    "dart": "Dart",
+                    "c": "C/C++",
+                    "java": "Java"
+                },
+                "frameworks": {
+                    "react": "React",
+                    "node": "Node.js",
+                    "flutter": "Flutter",
+                    "docker": "Docker"
+                },
+                "tools": {
+                    "git": "Git / Github",
+                    "jetbrains": "Jetbrains",
+                    "jira": "Jira Software",
+                    "figma": "Figma",
+                    "gpt": "ChatGPT / Gemini",
+                    "macos": "macOS"
+                }
+            }
+        },
+        "legal": {
+            "legalNotice": {
+                "title": "Legal Notice",
+                "name": "Tim Niederer",
+                "address": "Karlstraße 101",
+                "city": "89073 Ulm",
+                "country": "Germany",
+                "contactTitle": "Contact",
+                "phone": "Phone",
+                "email": "Email",
+                "source": "Source"
+            },
+            "privacy": {
+                "title": "Privacy Policy"
+            }
+        }
+    }
+}

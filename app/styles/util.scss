@@ -1,0 +1,359 @@
+/** Class for invisible meta data */
+.hidden {
+    display: none;
+}
+
+/**
+ * The base for white fonts
+ */
+.white-font {
+    filter: var(--white-shadow);
+    color: var(--white);
+    fill: var(--white);
+}
+
+/**
+ * The base for grey fonts
+ */
+.light-grey-font {
+    filter: var(--light-grey-shadow);
+    color: var(--light-grey);
+    fill: var(--light-grey);
+}
+
+/**
+ * The base for green fonts
+ */
+.green-font {
+    filter: var(--primary-green-shadow);
+    color: var(--primary-green);
+    fill: var(--primary-green);
+}
+
+/**
+ * The base for black fonts
+ */
+.black-font {
+    color: var(--black);
+    fill: var(--black);
+}
+
+/**
+ * Defines a max content width for pages
+ */
+.max-width {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 var(--spacing64);
+    margin-bottom: var(--spacing192);
+
+    .max-width-content {
+        max-width: var(--max-content-width);
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .max-width {
+        padding: 0 var(--spacing48);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .max-width {
+        padding: 0 var(--spacing32);
+    }
+}
+
+/**
+ * Hover effect for anchors
+ */
+.anchor {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    // The pseudo-element for the outlined shadow
+    &::before {
+        line-height: 1;
+        content: "";
+        position: absolute;
+        font-size: inherit;
+        border-bottom: 2px solid var(--white);
+        filter: var(--white-shadow);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1; // Position shadow behind main text
+
+        // Create the outline effect
+        transition: 300ms;
+        opacity: 0;
+    }
+
+    // Hover state for the entire link
+    &:hover,
+    &:focus-visible {
+        // Target the pseudo-element on hover
+        &::before {
+            opacity: 1;
+            transform: translate(0, 6px);
+        }
+    }
+}
+.black-anchor {
+    @extend .anchor;
+
+    &::before {
+        border-bottom: 2px solid var(--black);
+    }
+}
+
+/**
+ * Template for content boxes
+ */
+@mixin box-frame($color, $shadow) {
+    position: relative;
+    background: $color;
+    display: flex;
+
+    // Calculate the offset based on the border width (2 * width)
+    $width: 2px;
+    $offset: $width * 2;
+    margin-top: $offset;
+    margin-right: $offset;
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        border: $width solid $color;
+        filter: $shadow;
+        bottom: $offset;
+        left: $offset;
+        right: -$offset;
+        top: -$offset;
+    }
+}
+
+.green-box-frame {
+    @include box-frame(var(--primary-green), var(--primary-green-shadow));
+}
+
+.yellow-box-frame {
+    @include box-frame(var(--yellow), var(--yellow-shadow));
+}
+
+.white-box-frame {
+    @include box-frame(var(--white), var(--white-shadow));
+}
+
+.light-grey-box-frame {
+    @include box-frame(var(--light-grey), var(--light-grey-shadow));
+}
+
+.dark-grey-box-frame {
+    @include box-frame(var(--dark-grey), var(--dark-grey-shadow));
+}
+
+.icon-box {
+    @extend .green-box-frame;
+    padding: var(--spacing8);
+
+    img,
+    svg {
+        @extend .white-font;
+    }
+}
+
+/**
+ * Box button
+ */
+.button {
+    @extend .green-box-frame;
+    padding: var(--spacing12) var(--spacing24);
+    font-size: var(--text1);
+    cursor: pointer;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing12);
+    border: none;
+
+    &:focus-visible {
+        outline: 2px solid var(--white);
+
+        &::after {
+            outline: 2px solid var(--white);
+        }
+    }
+
+    svg {
+        width: var(--spacing32);
+        height: var(--spacing32);
+        fill: var(--white);
+    }
+
+    &:disabled {
+        background: var(--grey);
+        pointer-events: none;
+    }
+}
+
+.white-button {
+    @extend .button;
+    @extend .white-box-frame;
+
+    &:focus-visible {
+        outline: 2px solid var(--primary-green);
+
+        &::after {
+            outline: 2px solid var(--primary-green);
+        }
+    }
+
+    svg {
+        fill: var(--black);
+    }
+}
+
+.square-button {
+    @extend .button;
+    padding: var(--spacing12);
+}
+
+.white-square-button {
+    @extend .white-button;
+    padding: var(--spacing12);
+}
+
+/**
+ * Input style
+ */
+.input {
+    @extend .dark-grey-box-frame;
+    margin-bottom: var(--spacing24);
+    color: var(--white);
+
+    &:focus-within {
+        outline: 2px solid var(--white);
+
+        &::after {
+            outline: 2px solid var(--white);
+        }
+    }
+}
+
+/**
+ * Longer text blocks
+ */
+.text {
+    h2 {
+        margin-top: var(--spacing48);
+        margin-bottom: var(--spacing32);
+        line-height: 1;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    h3 {
+        margin-top: var(--spacing32);
+        margin-bottom: var(--spacing24);
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    h4 {
+        margin-top: var(--spacing24);
+        margin-bottom: var(--spacing16);
+    }
+
+    ul,
+    li {
+        margin-top: var(--spacing16);
+        margin-bottom: var(--spacing16);
+        margin-left: var(--spacing16);
+    }
+
+    .button {
+        margin-top: var(--spacing32);
+    }
+}
+
+/*
+ * Styles for bottom sheets
+ */
+.bottomSheetOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 90;
+}
+
+.bottomSheetContent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing24) 0;
+    background: var(--dark-grey);
+    z-index: 100;
+    border-top-left-radius: var(--spacing16);
+    border-top-right-radius: var(--spacing16);
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: var(--spacing24) 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing12);
+            padding: var(--spacing16) var(--spacing32);
+            cursor: pointer;
+
+            span {
+                font-size: var(--heading4);
+            }
+
+            &:active,
+            &:hover {
+                background-color: var(--grey);
+            }
+        }
+    }
+}
+
+/**
+ * Dropdown styles
+ */
+.dropdownContent {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--spacing12);
+
+    .dropdownItem {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing12);
+        padding: var(--spacing12);
+        cursor: pointer;
+        outline: none;
+
+        &:hover,
+        &:focus {
+            background-color: var(--grey);
+        }
+    }
+}

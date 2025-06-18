@@ -1,0 +1,76 @@
+:root {
+    /** Colors */
+    --primary-green: #03c712;
+    --primary-green-shadow: drop-shadow(0 0 12px #03c71299);
+    --yellow: #c7b703;
+    --white: #ffffff;
+    --white-shadow: drop-shadow(0 0 12px #ffffff99);
+    --light-grey: #ededed;
+    --light-grey-shadow: drop-shadow(0 0 12px #ededed99);
+
+    /** Black tones */
+    --black: #000000;
+    --dark-grey: #292929;
+    --dark-grey-shadow: drop-shadow(0 0 12px #29292999);
+    --grey: #7f7f7f;
+    --grey-hover: #969696;
+    --border-color: #b4b4b4;
+
+    /** The opacity for disabled elements */
+    --disabled-opacity: 0.5;
+
+    /* Transition times */
+    --standard-transition: 250ms;
+
+    /* Spacing values */
+    --spacing2: 0.125rem;
+    --spacing4: 0.25rem;
+    --spacing6: 0.375rem;
+    --spacing8: 0.5rem;
+    --spacing10: 0.625rem;
+    --spacing12: 0.75rem;
+    --spacing14: 0.875rem;
+    --spacing16: 1rem;
+    --spacing24: 1.5rem;
+    --spacing32: 2rem;
+    --spacing48: 3rem;
+    --spacing64: 4rem;
+    --spacing96: 6rem;
+
+    /* Text sizes */
+    --heading1: 5rem;
+    --heading2: 2rem;
+    --heading3: 1.8rem;
+    --heading4: 1.4rem;
+    --text1: 1.1rem;
+    --card-description: 0.9rem;
+
+    /** Other sizes */
+    --max-content-width: 1300px;
+    --header-height: 5rem;
+    --line-height: 1.4;
+}
+
+@media screen and (max-width: 1000px), screen and (max-height: 950px) {
+    html {
+        font-size: 95%;
+    }
+
+    :root {
+        --heading1: 5rem;
+        --heading2: 2.5rem;
+        --heading3: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 90%;
+    }
+
+    :root {
+        --heading1: 3rem;
+        --heading2: 2rem;
+        --heading3: 1.5rem;
+    }
+}

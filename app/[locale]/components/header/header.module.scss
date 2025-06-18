@@ -1,0 +1,111 @@
+.header {
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+
+    & + * {
+        margin-top: var(--header-height);
+    }
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    max-width: var(--max-content-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &:after {
+        position: absolute;
+        left: -4rem;
+        top: 0;
+        bottom: 0;
+        right: -4rem;
+        content: "";
+        z-index: -1;
+        background-color: #00000055;
+        backdrop-filter: blur(10px);
+    }
+}
+
+.logo span {
+    font-size: var(--heading3);
+}
+
+.navigation {
+    display: flex;
+    gap: var(--spacing24);
+    align-items: center;
+}
+
+.link {
+    font-size: var(--text1);
+
+    span {
+        font-size: inherit;
+    }
+}
+
+.mobileNavigation {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing24) 0;
+
+    a {
+        font-size: var(--heading4);
+        padding: var(--spacing16) var(--spacing32);
+
+        &:hover {
+            background: var(--grey);
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Mobile container for FABs */
+.mobileContainer {
+    display: none; /* Hidden by default */
+    position: fixed;
+    flex-direction: row;
+    bottom: var(--spacing32);
+    right: 0;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing16);
+    filter: drop-shadow(0 0 100px var(--black));
+}
+
+/* Mobile language container */
+.mobileLanguage {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: var(--spacing24);
+    left: var(--spacing24);
+    z-index: 100;
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 1000px) {
+    .navigation {
+        display: none; /* Hide desktop navigation */
+    }
+
+    .mobileContainer {
+        display: flex;
+    }
+
+    .mobileLanguage {
+        display: block; /* Show mobile language */
+    }
+}

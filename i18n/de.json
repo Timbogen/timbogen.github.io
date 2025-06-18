@@ -1,0 +1,118 @@
+{
+    "components": {
+        "header": {
+            "logoText": "Tim Niederer // Freelancing",
+            "service": "Service",
+            "experience": "Erfahrung",
+            "resume": "Lebenslauf",
+            "contact": "Kontakt",
+            "menu": "Menü",
+            "homePageContent": "Dies ist der Inhalt der Startseite.",
+            "greeting": "Willkommen!",
+            "appTitle": "Meine Anwendung",
+            "appDescription": "Eine tolle Anwendung mit Next.js und i18n",
+            "navigation": "Navigation"
+        },
+        "footer": {
+            "otherContacts": "Sonstige Kontakte",
+            "pages": "Seiten",
+            "legalNotice": "Impressum",
+            "privacy": "Datenschutz",
+            "home": "Startseite",
+            "contact": {
+                "title": "Kontakt",
+                "subject": "Betreff",
+                "message": "Ihre Nachricht...",
+                "send": "Senden"
+            }
+        },
+        "language": {
+            "selectLanguage": "Sprache auswählen",
+            "languageDetected": "Sprache erkannt",
+            "languageChanged": "Sprache geändert",
+            "languageRestored": "Spracheinstellung wiederhergestellt"
+        }
+    },
+    "accessibility": {
+        "menuIcon": "Menü-Symbol",
+        "emailIcon": "E-Mail-Symbol",
+        "phoneIcon": "Telefon-Symbol",
+        "linkedinIcon": "LinkedIn-Symbol",
+        "githubIcon": "GitHub-Symbol",
+        "linkIcon": "Link-Symbol",
+        "germanFlag": "Deutsche Flagge",
+        "britishFlag": "Britische Flagge"
+    },
+    "pages": {
+        "metadata": {
+            "title": "Tim Niederer // Freelancing",
+            "description": "Softwareentwicklung mit Fokus auf Web und Mobile Entwicklung.",
+            "openGraph": {
+                "title": "Tim Niederer // Freelancing",
+                "description": "Softwareentwicklung mit Fokus auf Web und Mobile Entwicklung.",
+                "countryName": "Deutschland"
+            }
+        },
+        "home": {
+            "intro": "Alles rund um Software",
+            "contactMe": "Kontaktiere mich",
+            "whatIOffer": "Was ich biete",
+            "offerDescription": "Die Bereiche in denen ich bisher am meisten Erfahrung gesammelt hab sind Web- und Mobile-Development. Dabei war ich meistens auch am Design beteiligt. Ich arbeite mich allerdings auch schnell und gerne in andere Technologien/Plattformen ein.",
+            "webFullstack": "Web / Fullstack",
+            "webDescription": "Entwicklung für Desktop und Mobile - bevorzugt mit React / NextJS & NestJS.",
+            "mobile": "Mobile",
+            "mobileDescription": "Crossplatform Entwicklung für iOS & Android - bevorzugt mit Flutter",
+            "other": "Sonstiges",
+            "otherDescription": "C & ESP32, C# & Unity, Java Swing/FX, ...",
+            "but": "aber...",
+            "butDescription": "Die Technologie ist für mich zweitrangig. Ich arbeite am liebsten an Projekten die ich selber benutzen kann / will. Durch eigenes Interesse am Produkt ist es für mich am einfachsten gute Lösungen zu entwickeln.",
+            "myPath": "Mein Weg",
+            "timeline2015": "2015 - fing an, dass ich privat kleine Projekte in Java, C# und Web (HTML/CSS/JS) entwickelt und später dann mit Swift und C++ weiter gemacht habe",
+            "timeline2018": "2018 - Ausbildung als Fachinformatiker für Anwendungsentwicklung in einem kleinen Software-Unternehmen als Fullstack-Entwickler",
+            "timeline2021": "2021 - Übernahme als Fullstack-Entwickler. Hauptsächlich in Typescript mit React, React-Native, NodeJS, ExpressJS, MSSQL und MySQL aber auch Swift und C++.",
+            "experience": {
+                "title": "Meine Erfahrung",
+                "description": "In meinen 8 Jahren Informatik hatte ich bereits mit den meisten großen Technologien Kontaktpunkte. Die meiste Zeit war ich im Frontend unterwegs, ich arbeite allerdings auch gerne an Backend- oder Hardware-Projekten. In den letzen 5 Jahren war ich primär in den folgenden Technologien unterwegs:",
+                "programmingLanguages": "Programmiersprachen",
+                "frameworksTechnologies": "Frameworks / Technologien",
+                "preferredTools": "Bevorzugte Tools bei der Entwicklung",
+                "languages": {
+                    "ts": "TypeScript",
+                    "dart": "Dart",
+                    "c": "C/C++",
+                    "java": "Java"
+                },
+                "frameworks": {
+                    "react": "React",
+                    "node": "Node.js",
+                    "flutter": "Flutter",
+                    "docker": "Docker"
+                },
+                "tools": {
+                    "git": "Git / Github",
+                    "jetbrains": "Jetbrains",
+                    "jira": "Jira Software",
+                    "figma": "Figma",
+                    "gpt": "ChatGPT / Gemini",
+                    "macos": "macOS"
+                }
+            }
+        },
+        "legal": {
+            "legalNotice": {
+                "title": "Impressum",
+                "name": "Tim Niederer",
+                "address": "Karlstraße 101",
+                "city": "89073 Ulm",
+                "country": "Deutschland",
+                "contactTitle": "Kontakt",
+                "phone": "Telefon",
+                "email": "E-Mail",
+                "source": "Quelle"
+            },
+            "privacy": {
+                "title": "Datenschutzerklärung"
+            }
+        }
+    }
+}

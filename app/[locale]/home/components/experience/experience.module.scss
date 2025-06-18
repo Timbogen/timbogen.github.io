@@ -1,0 +1,69 @@
+.experience {
+    h4 {
+        margin-bottom: var(--spacing32);
+    }
+}
+
+.experienceGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing64);
+    margin-bottom: var(--spacing48);
+
+    .experience {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing16);
+        margin-top: var(--spacing16);
+        width: 100%;
+
+        .progressBar {
+            flex: 1 1 auto;
+
+            .labels {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: var(--spacing6);
+            }
+
+            .bar {
+                height: 10px;
+                background-color: var(--dark-grey);
+                border: 1px solid var(--primary-green);
+
+                > div {
+                    height: 100%;
+                    background-color: var(--primary-green);
+                    filter: var(--primary-green-shadow);
+                }
+            }
+        }
+    }
+}
+
+.toolsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing32);
+
+    h4 {
+        margin-bottom: var(--spacing32);
+    }
+
+    & > div {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing16);
+    }
+}
+
+.iconSmall {
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (max-width: 800px) {
+    .experienceGrid {
+        grid-template-columns: 1fr;
+    }
+}

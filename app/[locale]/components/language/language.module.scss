@@ -1,0 +1,34 @@
+.languageTrigger {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing12);
+    background: transparent;
+    border: none;
+    filter: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+        line-height: 1;
+    }
+}
+
+/* Desktop and mobile view containers */
+.desktopView {
+    display: block;
+}
+
+.mobileView {
+    display: none;
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 1000px) {
+    .desktopView {
+        display: none;
+    }
+
+    .mobileView {
+        display: block;
+    }
+}

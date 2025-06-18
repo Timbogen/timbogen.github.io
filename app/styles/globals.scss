@@ -1,0 +1,100 @@
+@use "variables";
+@use "util";
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    background: var(--black);
+    scroll-behavior: smooth;
+}
+
+html > body[data-scroll-locked] {
+    --removed-body-scroll-bar-size: 0 !important;
+    margin-right: 0 !important;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-big), sans-serif;
+    font-size: var(--text1);
+    color: var(--white);
+    line-height: 1;
+}
+
+span,
+p {
+    color: inherit;
+    text-decoration: none;
+    line-height: var(--line-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+    scroll-margin-top: 8rem;
+    font-weight: 500;
+}
+
+h1 {
+    @extend .white-font;
+    font-size: var(--heading1);
+    margin-bottom: var(--spacing32);
+}
+
+h2 {
+    @extend .green-font;
+    font-size: var(--heading2);
+    margin-bottom: var(--spacing32);
+}
+
+h3 {
+    font-size: var(--heading3);
+    margin-bottom: var(--spacing32);
+}
+
+h4 {
+    font-size: var(--heading4);
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: var(--spacing16) var(--spacing24);
+    color: var(--white);
+}
+
+::placeholder {
+    color: var(--grey);
+}
+
+section {
+    margin-top: 8rem;
+
+    &:first-of-type {
+        margin-top: var(--spacing64);
+    }
+}
+
+div[data-radix-popper-content-wrapper] {
+    z-index: 100 !important;
+}
