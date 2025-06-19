@@ -18,7 +18,7 @@ import fs from "fs";
         console.log("Pushing to gh-pages...");
         execSync(`git push origin HEAD:gh-pages --force`, { stdio: "inherit" });
         execSync(`rm -r ${folderName}`, { stdio: "inherit" });
-        execSync(`git checkout -f main`, { stdio: "inherit" });
+        execSync(`git checkout -f master`, { stdio: "inherit" });
         execSync(`git branch -D gh-pages`, { stdio: "inherit" });
 
         console.log("Successfully deployed");
