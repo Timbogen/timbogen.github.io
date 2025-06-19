@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { Experience } from "./components/experience/experience";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 /**
  * The home page
@@ -16,7 +17,8 @@ export const Home: React.FC = () => {
             <div className={"max-width-content"}>
                 <section className={styles.intro}>
                     <div className={"light-grey-box-frame"}>
-                        <img
+                        <Image
+                            priority={true}
                             width={500}
                             height={500}
                             src={"/tim.png"}

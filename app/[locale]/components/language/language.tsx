@@ -5,7 +5,7 @@ import { Drawer } from "vaul";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import styles from "./language.module.scss";
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { locales } from "@/i18n/config";
 import clsx from "clsx";
 import { createLocalizedUrl, preferredLocaleKey } from "@/app/utils/i18n-utils";
@@ -69,8 +69,6 @@ const languages: Record<
  */
 export const Language: React.FC = () => {
     const router = useRouter();
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
     const locale = useLocale();
     const [isPending, startTransition] = useTransition();
     const [open, setOpen] = useState(false);
@@ -86,7 +84,7 @@ export const Language: React.FC = () => {
             // Save the selected locale to localStorage
             localStorage.setItem(preferredLocaleKey, newLocale);
             // Create the new URL with the target locale
-            const newUrl = createLocalizedUrl(newLocale, pathname, searchParams);
+            const newUrl = createLocalizedUrl(newLocale);
             router.replace(newUrl, { scroll: false });
         });
     };
@@ -131,8 +129,8 @@ export const Language: React.FC = () => {
                 </Drawer.Trigger>
                 <Drawer.Portal>
                     <Drawer.Overlay className={"bottomSheetOverlay"} />
-                    <Drawer.Content className={"bottomSheetContent"}>
-                        <Drawer.Title className={"hidden"}>{t("selectLanguage")}</Drawer.Title>
+                    <Drawer.Content className={"bottomSheetContent"} aria-describedby={undefined}>
+                        <Drawer.Title hidden>{t("selectLanguage")}</Drawer.Title>
                         <Drawer.Handle className={"dragIndicator"} />
                         <ul>
                             {locales.map((locale) => (

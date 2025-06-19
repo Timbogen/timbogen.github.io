@@ -58,8 +58,8 @@ export const Navigation = ({ locale }: { locale: string }) => {
                     </Drawer.Trigger>
                     <Drawer.Portal>
                         <Drawer.Overlay className={"bottomSheetOverlay"} />
-                        <Drawer.Content className={"bottomSheetContent"}>
-                            <Drawer.Title className={"hidden"}>{t("navigation")}</Drawer.Title>
+                        <Drawer.Content className={"bottomSheetContent"} aria-describedby={undefined}>
+                            <Drawer.Title hidden>{t("navigation")}</Drawer.Title>
                             <Drawer.Handle className={"dragIndicator"} />
                             <nav className={styles.mobileNavigation}>{navigationLinks}</nav>
                         </Drawer.Content>

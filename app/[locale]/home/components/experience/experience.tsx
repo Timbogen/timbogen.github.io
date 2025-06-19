@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./experience.module.scss";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
+/** The languages and frameworks */
 const experience = [
     {
         titleKey: "programmingLanguages",
@@ -56,9 +58,7 @@ export const Experience: React.FC = () => {
     return (
         <section className={styles.experience}>
             <h2 id={"experience"}>{t("title")}</h2>
-            <p>
-                {t("description")}
-            </p>
+            <p>{t("description")}</p>
             <div className={styles.experienceGrid}>
                 {experience.map((section, sectionIndex) => (
                     <div key={sectionIndex}>
@@ -66,19 +66,25 @@ export const Experience: React.FC = () => {
                         {section.items.map((item, itemIndex) => (
                             <div key={itemIndex} className={styles.experience}>
                                 <div className={"icon-box"}>
-                                    <img
+                                    <Image
+                                        width={32}
+                                        height={32}
                                         src={`/home/${item.name}.png`}
-                                        alt={t(section.titleKey === "programmingLanguages" 
-                                            ? `languages.${item.name}` 
-                                            : `frameworks.${item.name}`)}
+                                        alt={t(
+                                            section.titleKey === "programmingLanguages"
+                                                ? `languages.${item.name}`
+                                                : `frameworks.${item.name}`,
+                                        )}
                                         className={styles.iconSmall}
                                     />
                                 </div>
                                 <div className={styles.progressBar}>
                                     <div className={styles.labels}>
-                                        <p>{section.titleKey === "programmingLanguages" 
-                                            ? t(`languages.${item.name}`) 
-                                            : t(`frameworks.${item.name}`)}</p>
+                                        <p>
+                                            {section.titleKey === "programmingLanguages"
+                                                ? t(`languages.${item.name}`)
+                                                : t(`frameworks.${item.name}`)}
+                                        </p>
                                         <p className={"green-font"}>{item.percentage}%</p>
                                     </div>
                                     <div className={styles.bar}>
@@ -94,37 +100,73 @@ export const Experience: React.FC = () => {
             <div className={styles.toolsGrid}>
                 <div>
                     <div className={"icon-box"}>
-                        <img src="/home/git.png" alt={t("tools.git")} className={styles.iconSmall} />
+                        <Image
+                            width={32}
+                            height={32}
+                            src="/home/git.png"
+                            alt={t("tools.git")}
+                            className={styles.iconSmall}
+                        />
                     </div>
                     <span>{t("tools.git")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <img src="/home/jetbrains.png" alt={t("tools.jetbrains")} className={styles.iconSmall} />
+                        <Image
+                            width={32}
+                            height={32}
+                            src="/home/jetbrains.png"
+                            alt={t("tools.jetbrains")}
+                            className={styles.iconSmall}
+                        />
                     </div>
                     <span>{t("tools.jetbrains")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <img src="/home/jira.png" alt={t("tools.jira")} className={styles.iconSmall} />
+                        <Image
+                            width={32}
+                            height={32}
+                            src="/home/jira.png"
+                            alt={t("tools.jira")}
+                            className={styles.iconSmall}
+                        />
                     </div>
                     <span>{t("tools.jira")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <img src="/home/figma.png" alt={t("tools.figma")} className={styles.iconSmall} />
+                        <Image
+                            width={32}
+                            height={32}
+                            src="/home/figma.png"
+                            alt={t("tools.figma")}
+                            className={styles.iconSmall}
+                        />
                     </div>
                     <span>{t("tools.figma")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <img src="/home/gpt.png" alt={t("tools.gpt")} className={styles.iconSmall} />
+                        <Image
+                            width={32}
+                            height={32}
+                            src="/home/gpt.png"
+                            alt={t("tools.gpt")}
+                            className={styles.iconSmall}
+                        />
                     </div>
                     <span>{t("tools.gpt")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <img src="/home/macos.png" alt={t("tools.macos")} className={styles.iconSmall} />
+                        <Image
+                            width={32}
+                            height={32}
+                            src="/home/macos.png"
+                            alt={t("tools.macos")}
+                            className={styles.iconSmall}
+                        />
                     </div>
                     <span>{t("tools.macos")}</span>
                 </div>
