@@ -28,6 +28,7 @@
         "eslint-config-next": "15.3.3",
         "prettier": "3.5.3",
         "sass": "1.89.1",
+        "tsx": "4.20.3",
         "typescript": "^5"
     },
     "prettier": {
