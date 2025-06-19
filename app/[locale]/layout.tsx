@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
             title: t("openGraph.title"),
             description: t("openGraph.description"),
             type: "website",
-            images: ["https://timlikes.tech/img/icon.png"],
+            images: ["https://timlikes.tech/icon.png"],
             countryName: t("openGraph.countryName"),
             url: "https://timlikes.tech",
         },
