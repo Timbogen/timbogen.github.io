@@ -1,13 +1,13 @@
-name: Deploy to github pages (main)
+name: Deploy to github pages (master)
 on:
     push:
         branches:
-            - main
+            - master
 permissions:
     contents: write
 jobs:
     gh-pages-deploy:
-        name: Deploying to gh-pages (main)
+        name: Deploying to gh-pages (master)
         runs-on: ubuntu-latest
         steps:
             # Install NodeJS
