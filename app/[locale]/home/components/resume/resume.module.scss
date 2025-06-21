@@ -1,0 +1,106 @@
+.graphContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: var(--spacing24);
+}
+
+.graphSvg {
+    position: absolute;
+    top: 0;
+    left: var(--spacing24);
+    pointer-events: none;
+    overflow: visible;
+}
+
+.commitList {
+    position: relative;
+    z-index: 1;
+}
+
+.commitRow {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.commitNodeContainer {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.commitIcon {
+    padding: var(--spacing8);
+
+    &::after {
+        display: none;
+    }
+}
+
+.commitDetails {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing24);
+    padding-left: var(--spacing32);
+}
+
+.commitYear {
+    color: var(--grey);
+    flex-shrink: 0;
+    width: var(--spacing48);
+}
+
+.commitMessage {
+    color: var(--white);
+    line-height: var(--line-height);
+}
+
+@media screen and (max-width: 800px) {
+    .graphContainer {
+        padding-left: var(--spacing16);
+    }
+
+    .graphSvg {
+        left: var(--spacing16);
+    }
+
+    .commitIcon {
+        padding: var(--spacing4);
+
+        img {
+            width: var(--spacing24);
+            height: var(--spacing24);
+        }
+    }
+
+    .commitDetails {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing8);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .commitMessage {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .graphContainer {
+        padding-left: var(--spacing12);
+    }
+
+    .graphSvg {
+        left: var(--spacing12);
+    }
+
+    .commitIcon {
+        img {
+            width: var(--spacing16);
+            height: var(--spacing16);
+        }
+    }
+}

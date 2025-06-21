@@ -7,7 +7,7 @@
             "resume": "Resume",
             "contact": "Contact",
             "menu": "Menu",
-            "homePageContent": "This is the home page content.",
+            "homePageContent": "This is the content of the home page.",
             "greeting": "Welcome!",
             "appTitle": "My Application",
             "appDescription": "A great application with Next.js and i18n",
@@ -30,7 +30,7 @@
             "selectLanguage": "Select a language",
             "languageDetected": "Language detected",
             "languageChanged": "Language changed",
-            "languageRestored": "Language preference restored"
+            "languageRestored": "Language setting restored"
         }
     },
     "accessibility": {
@@ -46,18 +46,18 @@
     "pages": {
         "metadata": {
             "title": "Tim Niederer // Freelancing",
-            "description": "Software development focusing on web and mobile development.",
+            "description": "Software development with a focus on web and mobile development.",
             "openGraph": {
                 "title": "Tim Niederer // Freelancing",
-                "description": "Software development focusing on web and mobile development.",
+                "description": "Software development with a focus on web and mobile development.",
                 "countryName": "Germany"
             }
         },
         "home": {
-            "intro": "All about software",
+            "intro": "Everything about software",
             "contactMe": "Contact me",
-            "whatIOffer": "What I offer",
-            "offerDescription": "The areas where I have gained the most experience so far are web and mobile development. I was usually also involved in the design. However, I also quickly and gladly familiarize myself with other technologies/platforms.",
+            "whatIOffer": "What I Offer",
+            "offerDescription": "The areas where I have gained the most experience are web and mobile development. I was also usually involved in the design. However, I am also quick and happy to learn new technologies/platforms.",
             "webFullstack": "Web / Fullstack",
             "webDescription": "Development for desktop and mobile - preferably with React / NextJS & NestJS.",
             "mobile": "Mobile",
@@ -65,14 +65,12 @@
             "other": "Other",
             "otherDescription": "C & ESP32, C# & Unity, Java Swing/FX, ...",
             "but": "but...",
-            "butDescription": "Technology is secondary to me. I prefer to work on projects that I can/want to use myself. Through my own interest in the product, it is easiest for me to develop good solutions.",
+            "butDescription": "The technology is secondary to me. I prefer to work on projects that I can/want to use myself. My own interest in the product makes it easiest for me to develop good solutions.",
             "myPath": "My Path",
-            "timeline2015": "2015 - started developing small projects in Java, C# and Web (HTML/CSS/JS) privately and later continued with Swift and C++",
-            "timeline2018": "2018 - Training as an IT specialist for application development in a small software company as a full-stack developer",
-            "timeline2021": "2021 - Takeover as a full-stack developer. Mainly in Typescript with React, React-Native, NodeJS, ExpressJS, MSSQL and MySQL but also Swift and C++.",
+            "resumeDescription": "Here is my career path so far. Most of the projects I have worked on are only partially public and were usually under an NDA. Therefore, I will only refer to my work very superficially here.",
             "experience": {
                 "title": "My Experience",
-                "description": "In my 8 years of computer science, I have already had contact points with most major technologies. I spent most of my time in the frontend, but I also enjoy working on backend or hardware projects. In the last 5 years, I have primarily been working with the following technologies:",
+                "description": "In my 8 years in computer science, I have already had contact with most major technologies. I was mostly active in the frontend, but I also enjoy working on backend or hardware projects. In the last 5 years, I was primarily active in the following technologies:",
                 "programmingLanguages": "Programming Languages",
                 "frameworksTechnologies": "Frameworks / Technologies",
                 "preferredTools": "Preferred Development Tools",
@@ -95,6 +93,33 @@
                     "figma": "Figma",
                     "gpt": "ChatGPT / Gemini",
                     "macos": "macOS"
+                }
+            },
+            "resume": {
+                "companies": {
+                    "zwick": "ZwickRoell",
+                    "thu": "Ulm University of Applied Sciences",
+                    "einstein": "Einstein Motorsport",
+                    "weichwaren": "Weichwarenprojekt",
+                    "vollkit": "Vollkit",
+                    "freelance": "Freelancing",
+                    "hobby": "Hobby Projects"
+                },
+                "commits": {
+                    "hobby2017": "The journey began with hobby projects in Java. First small CLI tools and later many 2D games with Java Swing",
+                    "thu2018": "Studies at Ulm University of Applied Sciences (THU)",
+                    "zwick2018": "In-depth practice at Zwick/Roell in combination with studies",
+                    "einstein2020": "Joined the Driverless team at Einstein Motorsport for the initial development of an autonomous system",
+                    "einstein2022": "End of membership at Einstein Motorsport",
+                    "thu2022": "Graduation from THU",
+                    "zwick2022": "Transition to software developer in the central development at ZwickRoell",
+                    "weichwaren2022": "Start of the Weichwarenprojekt GbR",
+                    "vollkit2023": "Start of collaboration with Vollkit (e-bike)",
+                    "zwick2023": "End of employment at ZwickRoell and full transition to self-employment",
+                    "weichwaren2023": "Change from Weichwarenprojekt GbR to Weichwarenprojekt GmbH",
+                    "vollkit2025": "End of collaboration with Vollkit",
+                    "weichwaren2025": "End of Weichwarenprojekt GmbH",
+                    "freelance2025": "Transition to freelancing"
                 }
             }
         },

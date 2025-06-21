@@ -67,12 +67,10 @@
             "but": "aber...",
             "butDescription": "Die Technologie ist für mich zweitrangig. Ich arbeite am liebsten an Projekten die ich selber benutzen kann / will. Durch eigenes Interesse am Produkt ist es für mich am einfachsten gute Lösungen zu entwickeln.",
             "myPath": "Mein Weg",
-            "timeline2015": "2015 - fing an, dass ich privat kleine Projekte in Java, C# und Web (HTML/CSS/JS) entwickelt und später dann mit Swift und C++ weiter gemacht habe",
-            "timeline2018": "2018 - Ausbildung als Fachinformatiker für Anwendungsentwicklung in einem kleinen Software-Unternehmen als Fullstack-Entwickler",
-            "timeline2021": "2021 - Übernahme als Fullstack-Entwickler. Hauptsächlich in Typescript mit React, React-Native, NodeJS, ExpressJS, MSSQL und MySQL aber auch Swift und C++.",
+            "resumeDescription": "Hier mein bisheriger Werdegang. Die meisten Projekte an denen ich bisher gearbeitet habe sind nur begrenzt öffentlich und waren meistens unter einem NDA. Daher beziehe ich mich hier nur sehr oberflächlich auf meine Arbeit.",
             "experience": {
                 "title": "Meine Erfahrung",
-                "description": "In meinen 8 Jahren Informatik hatte ich bereits mit den meisten großen Technologien Kontaktpunkte. Die meiste Zeit war ich im Frontend unterwegs, ich arbeite allerdings auch gerne an Backend- oder Hardware-Projekten. In den letzen 5 Jahren war ich primär in den folgenden Technologien unterwegs:",
+                "description": "In meinen 8 Jahren Informatik hatte ich bereits mit den meisten großen Technologien Kontaktpunkte. Überwiegend war ich im Frontend unterwegs, ich arbeite allerdings auch gerne an Backend- oder Hardware-Projekten. In den letzen 5 Jahren war ich primär in den folgenden Technologien unterwegs:",
                 "programmingLanguages": "Programmiersprachen",
                 "frameworksTechnologies": "Frameworks / Technologien",
                 "preferredTools": "Bevorzugte Tools bei der Entwicklung",
@@ -95,6 +93,33 @@
                     "figma": "Figma",
                     "gpt": "ChatGPT / Gemini",
                     "macos": "macOS"
+                }
+            },
+            "resume": {
+                "companies": {
+                    "zwick": "ZwickRoell",
+                    "thu": "Technische Hochschule Ulm",
+                    "einstein": "Einstein Motorsport",
+                    "weichwaren": "Weichwarenprojekt",
+                    "vollkit": "Vollkit",
+                    "freelance": "Freelancing",
+                    "hobby": "Hobby Projekte"
+                },
+                "commits": {
+                    "hobby2017": "Beginn der Reise mit Hobby Projekten in Java. Erst kleine CLI-Tools und später dann viele 2D spiele mit Java Swing",
+                    "thu2018": "Studium an der Technischen Hochschule Ulm (THU)",
+                    "zwick2018": "Vertiefte Praxis bei Zwick/Roell in Kombination mit dem Studium",
+                    "einstein2020": "Beitritt zu Team Driverless von Einstein Motorsport zur Erstentwicklung eines Autonomen Systems",
+                    "einstein2022": "Ende der Mitgliedschaft bei Einstein Motorsport",
+                    "thu2022": "Abschluss des Studiums an der THU",
+                    "zwick2022": "Übergang zum Softwareentwickler in der Zentralentwicklung von ZwickRoell",
+                    "weichwaren2022": "Start der Weichwarenprojekt GbR",
+                    "vollkit2023": "Anfang der Zusammenarbeit mit Vollkit (E-Bike)",
+                    "zwick2023": "Ende der Anstellung bei ZwickRoell und vollständiger Übergang in die Selbständigkeit",
+                    "weichwaren2023": "Wechsel von Weichwarenprojekt GbR zu Weichwarenprojekt GmbH",
+                    "vollkit2025": "Ende der Zusammenarbeit mit Vollkit",
+                    "weichwaren2025": "Ende der Weichwarenprojekt GmbH",
+                    "freelance2025": "Übergang in das Freelancing"
                 }
             }
         },

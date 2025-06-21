@@ -122,6 +122,7 @@
     margin-top: $offset;
     margin-right: $offset;
 
+    & > .custom-border,
     &::after {
         content: "";
         position: absolute;

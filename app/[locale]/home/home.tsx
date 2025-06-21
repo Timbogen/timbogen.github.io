@@ -5,6 +5,7 @@ import { Experience } from "./components/experience/experience";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Resume } from "@/app/[locale]/home/components/resume/resume";
 
 /**
  * The home page
@@ -72,20 +73,8 @@ export const Home: React.FC = () => {
 
                 <section>
                     <h2 id={"resume"}>{t("myPath")}</h2>
-                    <div className={styles.timeline}>
-                        <div className={styles.timelineItem}>
-                            <div className={styles.timelineIcon}></div>
-                            <p className={"white-font"}>{t("timeline2015")}</p>
-                        </div>
-                        <div className={styles.timelineItem}>
-                            <div className={styles.timelineIcon}></div>
-                            <p className={"white-font"}>{t("timeline2018")}</p>
-                        </div>
-                        <div className={styles.timelineItem}>
-                            <div className={styles.timelineIcon}></div>
-                            <p className={"white-font"}>{t("timeline2021")}</p>
-                        </div>
-                    </div>
+                    <p className={"white-font"}>{t("resumeDescription")}</p>
+                    <Resume />
                 </section>
             </div>
         </div>
