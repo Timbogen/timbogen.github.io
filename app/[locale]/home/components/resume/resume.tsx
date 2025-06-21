@@ -164,8 +164,8 @@ export const Resume: React.FC = () => {
         if (branchLanes.has(commit.branch)) return;
 
         const activeBranches = Array.from(branchLifespans.entries())
-            .filter(([_, lifespan]) => index >= lifespan.start && index <= lifespan.end)
-            .map(([branchName, _]) => branchName);
+            .filter(([, lifespan]) => index >= lifespan.start && index <= lifespan.end)
+            .map(([branchName]) => branchName);
 
         const occupiedLanes = new Set(activeBranches.map((b) => branchLanes.get(b)).filter((l) => l !== undefined));
 
