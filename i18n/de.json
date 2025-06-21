@@ -67,10 +67,10 @@
             "but": "aber...",
             "butDescription": "Die Technologie ist für mich zweitrangig. Ich arbeite am liebsten an Projekten die ich selber benutzen kann / will. Durch eigenes Interesse am Produkt ist es für mich am einfachsten gute Lösungen zu entwickeln.",
             "myPath": "Mein Weg",
-            "resumeDescription": "Hier mein bisheriger Werdegang. Die meisten Projekte an denen ich bisher gearbeitet habe sind nur begrenzt öffentlich und waren meistens unter einem NDA. Daher beziehe ich mich hier nur sehr oberflächlich auf meine Arbeit.",
+            "resumeDescription": "Die meisten Projekte an denen ich bisher gearbeitet habe sind nur begrenzt öffentlich und waren meistens unter einem Geheimhaltungsvertrag. Daher beziehe ich mich hier nur sehr oberflächlich auf meine Arbeit.",
             "experience": {
                 "title": "Meine Erfahrung",
-                "description": "In meinen 8 Jahren Informatik hatte ich bereits mit den meisten großen Technologien Kontaktpunkte. Überwiegend war ich im Frontend unterwegs, ich arbeite allerdings auch gerne an Backend- oder Hardware-Projekten. In den letzen 5 Jahren war ich primär in den folgenden Technologien unterwegs:",
+                "description": "In meinen 8 Jahren Informatik hatte ich bereits mit den meisten Technologien Kontaktpunkte. Die meiste Erfahrung habe ich im Frontend, allerdings arbeite ich auch gerne an Backend- oder Hardware-Projekten. In den letzen 5 Jahren war ich primär in den folgenden Technologien unterwegs:",
                 "programmingLanguages": "Programmiersprachen",
                 "frameworksTechnologies": "Frameworks / Technologien",
                 "preferredTools": "Bevorzugte Tools bei der Entwicklung",
