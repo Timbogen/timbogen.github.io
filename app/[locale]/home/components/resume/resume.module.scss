@@ -52,11 +52,6 @@
     width: var(--spacing48);
 }
 
-.commitMessage {
-    color: var(--white);
-    line-height: var(--line-height);
-}
-
 @media screen and (max-width: 800px) {
     .graphContainer {
         padding-left: var(--spacing16);

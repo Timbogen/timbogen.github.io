@@ -269,7 +269,9 @@ export const Resume: React.FC = () => {
 
                             <div className={styles.commitDetails} style={{ marginLeft: `${commitDetailsMargin}px` }}>
                                 <span className={styles.commitYear}>{commit.year}</span>
-                                <p className={styles.commitMessage}>{t(`commits.${commit.message}`)}</p>
+                                <p className={clsx(styles.commitMessage, "white-font")}>
+                                    {t(`commits.${commit.message}`)}
+                                </p>
                             </div>
                         </div>
                     );
