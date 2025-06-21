@@ -27,9 +27,9 @@
             }
 
             .bar {
-                height: 10px;
-                background-color: var(--dark-grey);
-                border: 1px solid var(--primary-green);
+                height: 12px;
+                background: transparent;
+                border: 2px solid var(--primary-green);
 
                 > div {
                     height: 100%;

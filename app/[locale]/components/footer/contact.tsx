@@ -3,6 +3,10 @@
 import React, { useState } from "react";
 import styles from "@/app/[locale]/components/footer/footer.module.scss";
 import { useTranslations } from "next-intl";
+import clsx from "clsx";
+
+/** The email address */
+const email = "niederer.tim@gmail.com";
 
 /**
  * The contact form in the footer
@@ -12,13 +16,6 @@ export const Contact: React.FC = () => {
     const [body, setBody] = useState("");
     const t = useTranslations("components.footer.contact");
 
-    const handleContact = () => {
-        // You can replace this with your actual email address
-        const email = "niederer.tim@gmail.com";
-        window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-            subject,
-        )}&body=${encodeURIComponent(body)}`;
-    };
     return (
         <div className={styles.contactSection}>
             <h3 id={"contact"} className={"white-font"}>
@@ -41,9 +38,13 @@ export const Contact: React.FC = () => {
                     onChange={(e) => setBody(e.target.value)}
                 />
             </div>
-            <button className={"button"} onClick={handleContact}>
+            <a
+                className={clsx("button", !subject || !body ? "disabled" : "")}
+                target={"_blank"}
+                href={`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}
+            >
                 <span className={"white-font"}>{t("send")}</span>
-            </button>
+            </a>
         </div>
     );
 };

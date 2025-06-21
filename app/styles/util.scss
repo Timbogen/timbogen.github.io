@@ -194,9 +194,14 @@
         fill: var(--white);
     }
 
+    &.disabled,
     &:disabled {
         background: var(--grey);
         pointer-events: none;
+
+        &::after {
+            border-color: var(--grey);
+        }
     }
 }
 
