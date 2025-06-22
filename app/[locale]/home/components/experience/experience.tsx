@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./experience.module.scss";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import clsx from "clsx";
 
 /** The languages and frameworks */
 const experience = [
@@ -9,7 +9,7 @@ const experience = [
         titleKey: "programmingLanguages",
         items: [
             {
-                name: "ts",
+                name: "typescript",
                 percentage: 95,
             },
             {
@@ -17,7 +17,7 @@ const experience = [
                 percentage: 85,
             },
             {
-                name: "c",
+                name: "c-lang",
                 percentage: 70,
             },
             {
@@ -34,7 +34,7 @@ const experience = [
                 percentage: 95,
             },
             {
-                name: "node",
+                name: "nodejs",
                 percentage: 85,
             },
             {
@@ -66,17 +66,7 @@ export const Experience: React.FC = () => {
                         {section.items.map((item, itemIndex) => (
                             <div key={itemIndex} className={styles.experience}>
                                 <div className={"icon-box"}>
-                                    <Image
-                                        width={32}
-                                        height={32}
-                                        src={`/home/${item.name}.png`}
-                                        alt={t(
-                                            section.titleKey === "programmingLanguages"
-                                                ? `languages.${item.name}`
-                                                : `frameworks.${item.name}`,
-                                        )}
-                                        className={styles.iconSmall}
-                                    />
+                                    <span className={clsx("icon-24", `icon-${item.name}`)} />
                                 </div>
                                 <div className={styles.progressBar}>
                                     <div className={styles.labels}>
@@ -100,73 +90,37 @@ export const Experience: React.FC = () => {
             <div className={styles.toolsGrid}>
                 <div>
                     <div className={"icon-box"}>
-                        <Image
-                            width={32}
-                            height={32}
-                            src="/home/git.png"
-                            alt={t("tools.git")}
-                            className={styles.iconSmall}
-                        />
+                        <span className={clsx("icon-24", `icon-git`)} />
                     </div>
                     <span>{t("tools.git")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <Image
-                            width={32}
-                            height={32}
-                            src="/home/jetbrains.png"
-                            alt={t("tools.jetbrains")}
-                            className={styles.iconSmall}
-                        />
+                        <span className={clsx("icon-24", `icon-jetbrains`)} />
                     </div>
                     <span>{t("tools.jetbrains")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <Image
-                            width={32}
-                            height={32}
-                            src="/home/jira.png"
-                            alt={t("tools.jira")}
-                            className={styles.iconSmall}
-                        />
+                        <span className={clsx("icon-24", `icon-jira`)} />
                     </div>
                     <span>{t("tools.jira")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <Image
-                            width={32}
-                            height={32}
-                            src="/home/figma.png"
-                            alt={t("tools.figma")}
-                            className={styles.iconSmall}
-                        />
+                        <span className={clsx("icon-24", `icon-figma`)} />
                     </div>
                     <span>{t("tools.figma")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <Image
-                            width={32}
-                            height={32}
-                            src="/home/gpt.png"
-                            alt={t("tools.gpt")}
-                            className={styles.iconSmall}
-                        />
+                        <span className={clsx("icon-24", `icon-chatgpt`)} />
                     </div>
                     <span>{t("tools.gpt")}</span>
                 </div>
                 <div>
                     <div className={"icon-box"}>
-                        <Image
-                            width={32}
-                            height={32}
-                            src="/home/macos.png"
-                            alt={t("tools.macos")}
-                            className={styles.iconSmall}
-                        />
+                        <span className={clsx("icon-24", `icon-macos`)} />
                     </div>
                     <span>{t("tools.macos")}</span>
                 </div>

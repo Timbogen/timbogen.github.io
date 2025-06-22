@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import styles from "./resume.module.scss";
 import { useMediaQuery } from "@/app/utils/util";
 import clsx from "clsx";
@@ -17,13 +16,13 @@ const companies: Record<
         color: string;
     }
 > = {
-    zwick: { icon: "zr.png", color: "#d9232a" },
-    thu: { icon: "thu.png", color: "#007ac1" },
-    einstein: { icon: "einstein.png", color: "#f2c04e" },
-    weichwaren: { icon: "wp.png", color: "#f27d42" },
-    vollkit: { icon: "vollkit.png", color: "#99cc33" },
-    freelance: { icon: "freelance.png", color: "#03c712" },
-    hobby: { icon: "main.png", color: "#03c712" },
+    zwick: { icon: "zwick-roell", color: "#d9232a" },
+    thu: { icon: "thu", color: "#007ac1" },
+    einstein: { icon: "einstein", color: "#f2c04e" },
+    weichwaren: { icon: "weichwarenprojekt", color: "#f27d42" },
+    vollkit: { icon: "vollkit", color: "#99cc33" },
+    freelance: { icon: "freelancing", color: "#03c712" },
+    hobby: { icon: "git", color: "#03c712" },
 };
 
 /**
@@ -258,12 +257,7 @@ export const Resume: React.FC = () => {
                                     style={{ background: company.color, boxShadow: `0 0 12px ${company.color}` }}
                                 >
                                     <div className={"custom-border"} style={{ borderColor: company.color }}></div>
-                                    <Image
-                                        src={`/home/resume/${company.icon}`}
-                                        alt={t(`companies.${commit.companyKey}`)}
-                                        width={32}
-                                        height={32}
-                                    />
+                                    <span className={clsx("icon-32", `icon-${company.icon}`)} />
                                 </div>
                             </div>
 

@@ -1,0 +1,86 @@
+/**
+ * Sprite class that contains all the icons
+ */
+.icon-24 {
+    display: inline-block;
+    font-size: 24px; /* This property now controls the icon's size */
+    width: 1em; /* 1 * 64px = 64px */
+    height: 1em; /* 1 * 64px = 64px */
+    background-repeat: no-repeat;
+    background-image: url("/icons.png");
+    /* *
+     * Crucial property for scaling:
+     * Sprite width: 16 icons * 64px = 1024px -> 16em
+     * Sprite height: 2 rows * 64px = 128px -> 2em
+     */
+    background-size: 16em 2em;
+}
+
+.icon-32 {
+    @extend .icon-24;
+    font-size: 32px;
+}
+
+/* --- First row of the icon sprite (Y position: 0) --- */
+.icon-git {
+    background-position: 0 0;
+}
+.icon-flutter {
+    background-position: -1em 0;
+}
+.icon-macos {
+    background-position: -2em 0;
+}
+.icon-dart {
+    background-position: -3em 0;
+}
+.icon-c-lang {
+    background-position: -4em 0;
+}
+.icon-react {
+    background-position: -5em 0;
+}
+.icon-typescript {
+    background-position: -6em 0;
+}
+.icon-java {
+    background-position: -7em 0;
+}
+.icon-docker {
+    background-position: -8em 0;
+}
+.icon-nodejs {
+    background-position: -9em 0;
+}
+.icon-jetbrains {
+    background-position: -10em 0;
+}
+.icon-jira {
+    background-position: -11em 0;
+}
+.icon-figma {
+    background-position: -12em 0;
+}
+.icon-chatgpt {
+    background-position: -13em 0;
+}
+.icon-weichwarenprojekt {
+    background-position: -14em 0;
+}
+.icon-einstein {
+    background-position: -15em 0;
+}
+
+/* --- Second row of the icon sprite (Y position: -1em) --- */
+.icon-freelancing {
+    background-position: 0 -1em;
+}
+.icon-vollkit {
+    background-position: -1em -1em;
+}
+.icon-thu {
+    background-position: -2em -1em;
+}
+.icon-zwick-roell {
+    background-position: -3em -1em;
+}

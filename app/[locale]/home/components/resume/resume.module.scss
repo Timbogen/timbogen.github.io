@@ -64,9 +64,8 @@
     .commitIcon {
         padding: var(--spacing4);
 
-        img {
-            width: var(--spacing24);
-            height: var(--spacing24);
+        :global(.icon-32) {
+            font-size: 24px;
         }
     }
 
@@ -93,9 +92,8 @@
     }
 
     .commitIcon {
-        img {
-            width: var(--spacing16);
-            height: var(--spacing16);
+        :global(.icon-32) {
+            font-size: 16px;
         }
     }
 }
