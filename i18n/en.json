@@ -75,14 +75,14 @@
                 "frameworksTechnologies": "Frameworks / Technologies",
                 "preferredTools": "Preferred Development Tools",
                 "languages": {
-                    "ts": "TypeScript",
+                    "ts": "TypeScript / JavaScript",
                     "dart": "Dart",
                     "c": "C/C++",
                     "java": "Java"
                 },
                 "frameworks": {
-                    "react": "React",
-                    "node": "Node.js",
+                    "react": "React / NextJS",
+                    "node": "Node.js / NPM",
                     "flutter": "Flutter",
                     "docker": "Docker"
                 },

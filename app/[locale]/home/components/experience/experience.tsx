@@ -14,7 +14,7 @@ const experience = [
             },
             {
                 name: "dart",
-                percentage: 90,
+                percentage: 85,
             },
             {
                 name: "c",
@@ -39,7 +39,7 @@ const experience = [
             },
             {
                 name: "flutter",
-                percentage: 70,
+                percentage: 85,
             },
             {
                 name: "docker",
