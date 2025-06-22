@@ -83,6 +83,10 @@ textarea {
     color: var(--white);
 }
 
+picture {
+    display: flex;
+}
+
 ::placeholder {
     color: var(--grey);
 }

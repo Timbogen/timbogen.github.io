@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { Experience } from "./components/experience/experience";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { Resume } from "@/app/[locale]/home/components/resume/resume";
 
 /**
@@ -18,14 +17,19 @@ export const Home: React.FC = () => {
             <div className={"max-width-content"}>
                 <section className={styles.intro}>
                     <div className={"light-grey-box-frame"}>
-                        <Image
-                            priority={true}
-                            width={500}
-                            height={500}
-                            src={"/tim.png"}
-                            alt="Tim Niederer"
-                            className={styles.profileImage}
-                        />
+                        <picture>
+                            <source srcSet="/tim-1000.avif" type="image/avif" />
+                            <img
+                                fetchPriority={"high"}
+                                width={500}
+                                height={500}
+                                src="/tim-500.png"
+                                srcSet="/tim-500.png 1x, /tim-1000.png 2x"
+                                alt="Tim Niederer"
+                                decoding={"async"}
+                                className={styles.profileImage}
+                            />
+                        </picture>
                     </div>
                     <div className={styles.introText}>
                         <h1 className={"green-font"}>Tim Niederer</h1>
