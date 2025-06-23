@@ -1,12 +1,12 @@
 import React from "react";
 import "@/app/styles/globals.scss";
-import { generateMetadata as dynamicMetadata } from "@/app/[locale]/layout";
 import { defaultLocale } from "@/i18n/config";
+import { getMetadata } from "@/app/utils/server.util";
 
 /**
  * By default, generate the English metadata
  */
-export const generateMetadata = () => dynamicMetadata({ params: Promise.resolve({ locale: defaultLocale }) });
+export const generateMetadata = () => getMetadata(defaultLocale);
 
 /**
  * Root layout
