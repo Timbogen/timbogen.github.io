@@ -81,7 +81,7 @@
                     "java": "Java"
                 },
                 "frameworks": {
-                    "react": "React / NextJS",
+                    "react": "React / NextJS / Angular",
                     "nodejs": "Node.js / NPM",
                     "flutter": "Flutter",
                     "docker": "Docker"
